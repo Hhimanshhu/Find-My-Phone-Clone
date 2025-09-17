@@ -1,0 +1,98 @@
+.navbar {
+  position: fixed; /* change from sticky */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+
+  background: var(--card); /* solid background (light/dark mode friendly) */
+  border-bottom: 1px solid var(--border);
+
+  z-index: 10000; /* higher than map & dropdown */
+}
+
+
+.navLeft .brand {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navBtn {
+  background: none;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text);
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.navBtn:hover {
+  background: var(--hover);
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownContent {
+  position: absolute;
+  right: 0;
+  margin-top: 6px;
+  background: var(--dropdown-bg);
+  min-width: 200px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  border-radius: 8px;
+  overflow: hidden;
+
+  /* KEY FIX */
+  z-index: 5000;  /* way higher than Leaflet map (usually 400) */
+
+  /* Smooth opening */
+  opacity: 0;
+  transform: scale(0.95);
+  transform-origin: top right;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+
+/* When dropdown is open */
+.dropdown.open .dropdownContent {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.dropdownContent a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--dropdown-text);
+  transition: background 0.2s;
+}
+
+.dropdownContent a:hover {
+  background: var(--dropdown-hover);
+}
