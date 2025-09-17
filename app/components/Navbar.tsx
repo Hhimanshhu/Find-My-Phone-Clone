@@ -6,7 +6,14 @@ import { useToast } from "../context/ToastContext";
 
 
 type Device = {
+  id: number;
   name: string;
+  model: string;
+  location: string;
+  lat: number;
+  lng: number;
+  battery: number;
+  lastSeen: string;
 };
 
 export default function Navbar({
@@ -14,10 +21,11 @@ export default function Navbar({
   theme,
   setTheme,
 }: {
-  selected?: Device;  
+  selected: Device | null;   // ✅ allow null too
   theme: "light" | "dark";
   setTheme: (t: "light" | "dark") => void;
 }) {
+
 
   const [appsOpen, setAppsOpen] = useState(false);
 
