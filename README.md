@@ -34,20 +34,6 @@ TypeScript – Type safety.
 CSS Modules & Custom CSS Vars – Theming + styling.
 
 
-
-📂 Project Structure
-
-find-my-device/
-├── app/
-│   ├── components/      # Reusable UI components (Navbar, MapView, Toast, etc.)
-│   ├── data/            # Static device data
-│   ├── globals.css      # Global styles & theme variables
-│   ├── layout.tsx       # Root layout & theme loader
-│   ├── page.tsx         # Main dashboard (sidebar + map)
-│   └── page.module.css  # Page & sidepanel styling
-
-
-
 ⚡ Getting Started
 1️⃣ Clone & Install
 npm install
