@@ -5,15 +5,20 @@ import styles from "./Navbar.module.css";
 import { useToast } from "../context/ToastContext";
 
 
+type Device = {
+  name: string;
+};
+
 export default function Navbar({
   selected,
   theme,
   setTheme,
 }: {
-  selected: any;
+  selected?: Device;  
   theme: "light" | "dark";
   setTheme: (t: "light" | "dark") => void;
 }) {
+
   const [appsOpen, setAppsOpen] = useState(false);
 
   const { showToast } = useToast();
